@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nick Buck\.android\build-cache\ab670b4ed202f4f4cf0bf39f991692b88bbbf454\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="e31331bdf6b5952badadbfc171f04b95c55d3b16">
+        <dex dex="C:\Users\Nick Buck\Documents\Darts\DartsConnected\dartsconnectedver1\android\app\build\intermediates\pre-dexed\debug\classes_fc7e356ebb32f3b72f11a05cdd196fa7ff5af285.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nick Buck\.android\build-cache\ab670b4ed202f4f4cf0bf39f991692b88bbbf454\output\jars\libs\infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="C:\Users\Nick Buck\Documents\Darts\DartsConnected\dartsconnectedver1\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_3ab34c04f6142c317ed87b2015d198e9594e0306.jar" />
+    </item>
+
+</items>
