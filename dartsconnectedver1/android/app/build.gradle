@@ -94,8 +94,10 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion = 25
+    buildToolsVersion = 25
+    //rootProject.ext.buildToolsVersion
+    //rootProject.ext.compileSdkVersion
 
     defaultConfig {
         applicationId "com.dartsconnectedver1"
