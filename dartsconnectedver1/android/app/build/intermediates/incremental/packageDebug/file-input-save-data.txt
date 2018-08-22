@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Aug 21 23:48:31 CDT 2018
+#Wed Aug 22 00:34:15 CDT 2018
 20.base=C\:\\Users\\Nick Buck\\Documents\\Darts\\DartsConnected\\dartsconnectedver1\\android\\app\\build\\intermediates\\res\\resources-debug.ap_
 143.base=C\:\\Users\\Nick Buck\\Documents\\Darts\\DartsConnected\\dartsconnectedver1\\android\\app\\build\\intermediates\\res\\resources-debug.ap_
 493.base=C\:\\Users\\Nick Buck\\Documents\\Darts\\DartsConnected\\dartsconnectedver1\\android\\app\\build\\intermediates\\res\\resources-debug.ap_

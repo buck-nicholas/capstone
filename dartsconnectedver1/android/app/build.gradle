@@ -143,6 +143,7 @@ dependencies {
     compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     compile "com.facebook.react:react-native:+"  // From node_modules
     compile 'com.google.firebase:firebase-core:16.0.0'
+    compile project(':react-native-bluetooth-serial')
     //implementation 'com.google.firebase:firebase-database:16.0.1'
 }
 
