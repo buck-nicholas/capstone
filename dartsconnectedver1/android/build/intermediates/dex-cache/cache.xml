@@ -3,6 +3,60 @@
 
     <item
         is-multidex="false"
+        jar="C:\Users\Nick Buck\.android\build-cache\14cd965a53a89603f51ff91ac6acba0b6371c7bb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="8d813c05361147f6f515f749df19223cd6256314">
+        <dex dex="C:\Users\Nick Buck\Documents\Darts\DartsConnected\dartsconnectedver1\android\app\build\intermediates\pre-dexed\debug\classes_776c3cb4907e036d95f815df7f1d1fb29e80a0aa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nick Buck\.android\build-cache\7d4fd0353fe46348f868c2ded758311fd5232231\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="6a13da3b2de1cb4d43145994271c4d9e6ac060be">
+        <dex dex="C:\Users\Nick Buck\Documents\Darts\DartsConnected\dartsconnectedver1\android\app\build\intermediates\pre-dexed\debug\classes_99489951d22529a42f636189f41a4acfa2a0fe3a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nick Buck\.android\build-cache\010e44b035dff4b6622e23b123a4df3bed33bcd4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="1e224748cbf54c34eac0bca6376922468b786775">
+        <dex dex="C:\Users\Nick Buck\Documents\Darts\DartsConnected\dartsconnectedver1\android\app\build\intermediates\pre-dexed\debug\classes_e35575ef77db4a350f1ffe96b29e2a309a053c80.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nick Buck\.android\build-cache\3f525681edacf159494ff2b36432637befdec1ab\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="6bd97fd543ffb061a7d3f2f9d6247f4b5e0017f5">
+        <dex dex="C:\Users\Nick Buck\Documents\Darts\DartsConnected\dartsconnectedver1\android\app\build\intermediates\pre-dexed\debug\classes_264dc7c8fc0db03dd5ec0416e528ca390f669290.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nick Buck\.android\build-cache\c242767c6aa7ff0090036121dcc8967e9af894c5\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="63413895dce50f6123807d1db2274a1982a34194">
+        <dex dex="C:\Users\Nick Buck\Documents\Darts\DartsConnected\dartsconnectedver1\android\app\build\intermediates\pre-dexed\debug\classes_d481ee4ce762d7ffb574ec53431287a93dfdc570.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nick Buck\.android\build-cache\637beb3c585b5a669169909709d2fc3b64c06a58\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="d8fe6d91310b54734f454dd490c3c869f6290576">
+        <dex dex="C:\Users\Nick Buck\Documents\Darts\DartsConnected\dartsconnectedver1\android\app\build\intermediates\pre-dexed\debug\classes_50fe0e672d14b8982b0e7a155c4c171df0d8a293.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Nick Buck\.android\build-cache\ab670b4ed202f4f4cf0bf39f991692b88bbbf454\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -12,12 +66,75 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Nick Buck\.android\build-cache\7b6e072b76ed987bec9b656e35edb08a7b7046cf\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="a66ffce1d574f71569fedd39d178da5856f0a84b">
+        <dex dex="C:\Users\Nick Buck\Documents\Darts\DartsConnected\dartsconnectedver1\android\app\build\intermediates\pre-dexed\debug\classes_e032536813124f31ac4fd1e1c7d8a0e9d3de2477.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nick Buck\.android\build-cache\490f18dd43f70c61d142a4caaef980f374ce7d00\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="4d4d98a0428b2e620e6b4a228ef9f7cb2f0debd2">
+        <dex dex="C:\Users\Nick Buck\Documents\Darts\DartsConnected\dartsconnectedver1\android\app\build\intermediates\pre-dexed\debug\classes_cb3d6d3f1134a18439c4aaa92b7676566e44d84b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nick Buck\.android\build-cache\01f21825ee947f38f6890ef714d2b315ecd36a45\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="c1e9d140d3260619ce2fa991d30b14b531d61dec">
+        <dex dex="C:\Users\Nick Buck\Documents\Darts\DartsConnected\dartsconnectedver1\android\app\build\intermediates\pre-dexed\debug\classes_c03abce9396173653eff32bffc3f23de4a8b5c6f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nick Buck\.android\build-cache\0313cbd8fa508100d07dc55542c7d40004f355d7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="2a69972573cb7e5cc6b8652bacf981e82b68ff71">
+        <dex dex="C:\Users\Nick Buck\Documents\Darts\DartsConnected\dartsconnectedver1\android\app\build\intermediates\pre-dexed\debug\classes_77dbcac3a141ba20500be22d5eca80ac6857b927.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Nick Buck\.android\build-cache\ab670b4ed202f4f4cf0bf39f991692b88bbbf454\output\jars\libs\infer-annotations-4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.3"
         sha1="9809e90be788acdb479b2b44e2112f3295a03068">
         <dex dex="C:\Users\Nick Buck\Documents\Darts\DartsConnected\dartsconnectedver1\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_3ab34c04f6142c317ed87b2015d198e9594e0306.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nick Buck\.android\build-cache\687a6f7ce88cca8f8bc68ba2117fb6b06b95d7bc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="0fbef528093d3d19b229116b683bd2a66d4aeae1">
+        <dex dex="C:\Users\Nick Buck\Documents\Darts\DartsConnected\dartsconnectedver1\android\app\build\intermediates\pre-dexed\debug\classes_36a0b75b080e35aa02366e7eddad49830bedeab1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nick Buck\.android\build-cache\e4dbe64194735ec3a7de503b2e40dbf749760709\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="3e2b946046fb1d10649a06811b870f2eca30ea53">
+        <dex dex="C:\Users\Nick Buck\Documents\Darts\DartsConnected\dartsconnectedver1\android\app\build\intermediates\pre-dexed\debug\classes_c985c5f29af125c7ade66c9634860dd74c8a84ec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nick Buck\.android\build-cache\56f142730db76d665a8c2bd27c95c742681fc9db\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.3"
+        sha1="f9148af2391a1288519f4f1d38da060c4a640e85">
+        <dex dex="C:\Users\Nick Buck\Documents\Darts\DartsConnected\dartsconnectedver1\android\app\build\intermediates\pre-dexed\debug\classes_59d4ad589ed7429070cc179e3cac443952909758.jar" />
     </item>
 
 </items>

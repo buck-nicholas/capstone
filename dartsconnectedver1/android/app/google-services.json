@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "293224873729",
+    "firebase_url": "https://dartsconnectedver2.firebaseio.com",
+    "project_id": "dartsconnectedver2",
+    "storage_bucket": "dartsconnectedver2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:293224873729:android:90af6058b170a5ad",
+        "android_client_info": {
+          "package_name": "com.dartsconnectedver1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "293224873729-2o6n1vq51rn5fcn5ikuk1pu5s0cces7k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCglPU-ixCr7vfSp6C5v6wBKlVAjh0kaLM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
