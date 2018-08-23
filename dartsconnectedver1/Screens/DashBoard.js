@@ -14,6 +14,7 @@ class DashBoard extends Component {
             <View style={styles.container}>
                 <Button onPress={() => this.props.navigation.navigate('CreateGame')}>Create New Game Lobby</Button>
                 <Button onPress={() => this.props.navigation.navigate('JoinGame')}>Join Existing Game Lobby</Button>
+                <Button onPress={() => this.props.navigation.navigate('Bluetooth')}>Join Existing Game Lobby</Button>
             </View>
         )
     }

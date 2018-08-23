@@ -18,7 +18,8 @@ import LoginScreen from './Screens/LoginScreen';
 import DashBoard from './Screens/DashBoard';
 import CreateGame from './Screens/CreateGame';
 import JoinGame from './Screens/JoinGame';
-import GameScreen from './Screens/GameScreen'
+import GameScreen from './Screens/GameScreen';
+import Bluetooth from './Screens/Bluetooth';
 
 import {StackNavigator} from 'react-navigation'
 
@@ -27,7 +28,8 @@ const AppStackNavigator = new StackNavigator({
   DashBoard:{screen:DashBoard},
   CreateGame:{screen:CreateGame},
   JoinGame:{screen:JoinGame},
-  GameScreen:{screen:GameScreen}
+  GameScreen:{screen:GameScreen},
+  Bluetooth:{screen:Bluetooth}
 },
 {
   headerMode: 'none'
