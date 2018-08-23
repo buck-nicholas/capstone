@@ -4,12 +4,13 @@ import {
     StyleSheet,
     Text,
     View,
-    Button,
+    // Button,
     FlatList,
     Switch,
     TouchableOpacity,
     ToastAndroid
   } from 'react-native';
+  import {Button} from '../components/Button.js'
   var _ = require('lodash');
   import BluetoothSerial from 'react-native-bluetooth-serial'
   // import convertInput from '../components/InputConverter'
@@ -60,56 +61,57 @@ import {
      
         })
       
-        BluetoothSerial.withDelimiter('\r').then(() => {
-          Promise.all([
-            BluetoothSerial.isEnabled(),
-            BluetoothSerial.list(),
-          ])
-          BluetoothSerial.on('read', data => {
-          let inputs = [
-              ['4,8','6,8','5,8'], // 1
-              ['2,5','0,5','1,5'], // 2
-              ['2,7','0,7','1,7'], // 3
-              ['4,7','6,7','5,7'], // 4
-              ['4,2','6,2','5,1'], // 5
-              ['4,5','6,5','5,5'], // 6
-              ['2,8','0,8','1,8'], // 7
-              ['2,2','0,2','1,2'], // 8
-              ['4,0','6,0','5,0'], // 9
-              ['4,4','6,4','5,4'], // 10
-              ['2,1','0,1','1,1'], // 11
-              ['4,1','6,1','5,1'], // 12
-              ['4,6','6,6','5,6'], // 13
-              ['2,0','0,0','1,0'], // 14
-              ['2,4','0,4','1,4'], // 15
-              ['2,3','0,3','1,3'], // 16
-              ['2,6','0,6','1,6'], // 17
-              ['4,9','6,9','5,9'], // 18
-              ['2,9','0,9','1,9'], // 19
-              ['4,3','6,3','5,3'], // 20
-              ['3,1'], // SingleBull
-              ['3,0'], // DoubleBull
-          ]
-          let value = {
-            Number: '',
-            Type: '',
-          }
-          let recieved = data.data.trim()
-            // console.log('Data from Bluetooth: ${data.data}'), 
-          let Types = ['Single','Double','Triple']
-          for(i=0;i<inputs.length;i++){
-            if(inputs[i].includes(recieved)){
-              if(i >= 20){
-                  value.Number = 'Bull';
-                  value.Type = types[i-20];
-              }
-              value.Number = i + 1;
-              value.Type = Types[inputs[i].indexOf(recieved)];
-            }
-          }
-          if(value.Number != ''){this.setState({ lastHit: value})}
-          })
-        })
+        // BluetoothSerial.withDelimiter('\r').then(() => {
+        //   Promise.all([
+        //     BluetoothSerial.isEnabled(),
+        //     BluetoothSerial.list(),
+        //   ])
+        //   BluetoothSerial.on('read', data => {
+        //   let inputs = [
+        //       ['4,8','6,8','5,8'], // 1
+        //       ['2,5','0,5','1,5'], // 2
+        //       ['2,7','0,7','1,7'], // 3
+        //       ['4,7','6,7','5,7'], // 4
+        //       ['4,2','6,2','5,1'], // 5
+        //       ['4,5','6,5','5,5'], // 6
+        //       ['2,8','0,8','1,8'], // 7
+        //       ['2,2','0,2','1,2'], // 8
+        //       ['4,0','6,0','5,0'], // 9
+        //       ['4,4','6,4','5,4'], // 10
+        //       ['2,1','0,1','1,1'], // 11
+        //       ['4,1','6,1','5,1'], // 12
+        //       ['4,6','6,6','5,6'], // 13
+        //       ['2,0','0,0','1,0'], // 14
+        //       ['2,4','0,4','1,4'], // 15
+        //       ['2,3','0,3','1,3'], // 16
+        //       ['2,6','0,6','1,6'], // 17
+        //       ['4,9','6,9','5,9'], // 18
+        //       ['2,9','0,9','1,9'], // 19
+        //       ['4,3','6,3','5,3'], // 20
+        //       ['3,1'], // SingleBull
+        //       ['3,0'], // DoubleBull
+        //   ]
+        //   let value = {
+        //     Number: '',
+        //     Type: '',
+        //   }
+        //   let recieved = data.data.trim()
+        //     // console.log('Data from Bluetooth: ${data.data}'), 
+        //   let Types = ['Single','Double','Triple']
+        //   for(i=0;i<inputs.length;i++){
+        //     if(inputs[i].includes(recieved)){
+        //       if(i >= 20){
+        //           value.Number = 'Bull';
+        //           value.Type = Types[i-20];
+        //       }
+        //       value.Number = i + 1;
+        //       value.Type = Types[inputs[i].indexOf(recieved)];
+        //     }
+        //   }
+        //   if(value.Number != ''){this.setState({ lastHit: value})}
+        //   })
+        // })
+
       }
       connect (device) {
         this.setState({ connecting: true })
@@ -118,6 +120,8 @@ import {
           console.log(`Connected to device ${device.name}`);
           
           ToastAndroid.show(`Connected to device ${device.name}`, ToastAndroid.SHORT);
+          //this.props.navigation.state.params
+          this.props.navigation.navigate('GameScreen', this.props.navigation.state.params);
         })
         .catch((err) => console.log((err.message)))
       }
@@ -185,11 +189,11 @@ import {
                   />
                 </View>
           </View>
-            <Button
+            {/* <Button
               onPress={this.discoverAvailableDevices.bind(this)}
               title="Scan for Devices"
               color="#841584"
-            />
+            /> */}
             <FlatList
               style={{flex:1}}
               data={this.state.devices}
@@ -197,7 +201,7 @@ import {
               renderItem={(item) => this._renderItem(item)}
             />
             <Text>Dart Hit: {this.state.lastHit.Type} {this.state.lastHit.Number}</Text>
-            
+            <Button onPress={() => this.props.navigation.navigate('CreateGame')}>Create New Game Lobby</Button>
           </View>
         );
       }

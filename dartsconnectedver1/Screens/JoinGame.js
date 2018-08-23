@@ -44,7 +44,7 @@ joinGame = (gameObj) => {
     firebase2.database().ref('games/' + gameObj.key).update({
         playerTwo: user.uid,
         gameState: 'In Progress'
-    }).then(this.props.navigation.navigate('GameScreen', gameObj.key))
+    }).then(this.props.navigation.navigate('Bluetooth', gameObj.key))// .then(this.props.navigation.navigate('GameScreen', gameObj.key)) // direct to bT connect, then pass key to gamescreen
 } 
 
     render () {
