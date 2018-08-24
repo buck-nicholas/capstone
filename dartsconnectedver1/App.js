@@ -20,6 +20,7 @@ import CreateGame from './Screens/CreateGame';
 import JoinGame from './Screens/JoinGame';
 import GameScreen from './Screens/GameScreen';
 import Bluetooth from './Screens/Bluetooth';
+import Stats from './Screens/Stats'
 
 import {StackNavigator} from 'react-navigation'
 
@@ -29,7 +30,8 @@ const AppStackNavigator = new StackNavigator({
   CreateGame:{screen:CreateGame},
   JoinGame:{screen:JoinGame},
   GameScreen:{screen:GameScreen},
-  Bluetooth:{screen:Bluetooth}
+  Bluetooth:{screen:Bluetooth},
+  Stats:{screen:Stats}
 },
 {
   headerMode: 'none'

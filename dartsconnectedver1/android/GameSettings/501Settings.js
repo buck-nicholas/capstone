@@ -164,7 +164,7 @@ function UpdatePPDTable(myGame){
     pOneId = myGame.playerOne;
     pTwoId = myGame.playerTwo;
     database = firebase2.database();
-    var ref = database.ref('stats/ppdRank');
+    var ref = database.ref('stats/');
     ref.once('value', snapshot => {
         var players = []
         snapshot.forEach(function(data) {
@@ -174,12 +174,12 @@ function UpdatePPDTable(myGame){
         })
         if(players.includes(pOneId)){
             newAvg = (players[players.indexOf(pOneId)].ppdAvg + myGame.PlayerOnePointsPerDart) / 2;
-            firebase2.database().red('stats/ppdRank' + pOneId).update({
+            firebase2.database().ref('stats/' + pOneId).update({
                 ppdAvg: newAvg,
             })
         }
         else{
-            firebase2.database().red('stats/ppdRank' + pOneId).set({
+            firebase2.database().ref('stats/' + pOneId).set({
                 ppdAvg: myGame.PlayerOnePointsPerDart,
             })
         }
@@ -193,12 +193,12 @@ function UpdatePPDTable(myGame){
         })
         if(players.includes(pTwoId)){
             newAvg = (players[players.indexOf(pTwoId)].ppdAvg + myGame.PlayerTwoPointsPerDart) / 2;
-            firebase2.database().red('stats/ppdRank' + pTwoId).update({
+            firebase2.database().ref('stats/' + pTwoId).update({
                 ppdAvg: newAvg,
             })
         }
         else{
-            firebase2.database().red('stats/ppdRank' + pTwoId).set({
+            firebase2.database().ref('stats/' + pTwoId).set({
                 ppdAvg: myGame.PlayerTwoPointsPerDart,
             })
         }

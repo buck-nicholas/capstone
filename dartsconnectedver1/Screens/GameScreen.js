@@ -75,7 +75,6 @@ constructor(props){
                 }
             })
             x = x[0];
-            alert(x.playerOneScore)
             this.setState({
                 playerOneScore: x.playerOneScore,
                 playerOneDarts: x.playerOneDarts,
