@@ -10,7 +10,8 @@ import {Input} from "../components/Input";
 import * as firebase2 from 'firebase'
 import firebase from '@firebase/app';
 import '@firebase/auth';
-import BluetoothSerial from 'react-native-bluetooth-serial'
+import BluetoothSerial from 'react-native-bluetooth-serial';
+import { ScoreUpdate, ScoreBoardInit } from '../android/GameSettings/501Settings';
 
 class GameScreen extends Component {
 constructor(props){
@@ -34,6 +35,7 @@ constructor(props){
    
 
     componentWillMount(){
+        ScoreBoardInit(this.props.navigation.state.params);
         var that = this;
         database = firebase2.database();
         var ref = database.ref('games');
@@ -107,6 +109,8 @@ constructor(props){
               }
             }
             if(value.Number != ''){this.setState({ lastHit: value})}
+            
+            ScoreUpdate(value, this.props.navigation.state.params);
             })
           })
     }
