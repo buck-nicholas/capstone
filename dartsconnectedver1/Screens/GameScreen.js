@@ -17,15 +17,16 @@ class GameScreen extends Component {
 constructor(props){
     super(props)
     this.state = {
-        // lobbyID: '',
-        // playerOne: '',
-        // playerOneScore: '0',
-        // playerOneDarts: [0,0,0],
-        // PlayerOnePointsPerDart: '0',
-        // playerTwo: '',
-        // playerTwoScore: '0',
-        // playerTwoDarts: [0,0,0],
-        // PlayerTwoPointsPerDart: '0',
+        lobbyID: '',
+        playerOneScore: 501,
+        playerOneDarts: 'No Darts Thrown',
+        playerOneRegisteredDarts: 0,
+        PlayerOnePointsPerDart: 0,
+        playerTwoScore: 501,
+        playerTwoDarts: 'No Darts Thrown',
+        playerTwoRegisteredDarts: 0,
+        PlayerTwoPointsPerDart: 0,
+        PlayerTurn: 'Player One',
         lastHit: {
             Number: '0',
             Type: 'Dart Not Thrown'
@@ -56,6 +57,47 @@ constructor(props){
                 lobbyID: thisGame[0].key,
             })
         })
+
+        // var starCountRef = firebase.database().ref('posts/' + postId + '/starCount');
+        // starCountRef.on('value', function(snapshot) {
+        //   updateStarCount(postElement, snapshot.val());
+        // });
+
+        var gameRef = firebase2.database().ref('games/');
+        gameRef.on('value', snapshot => {
+            x = [];
+            myId = this.props.navigation.state.params;
+            snapshot.forEach(function(data) {
+                let result = data.val();
+                result['key'] = data.key;
+                if(result.key == myId){
+                    x.push(result);
+                }
+            })
+            x = x[0];
+            alert(x.playerOneScore)
+            this.setState({
+                playerOneScore: x.playerOneScore,
+                playerOneDarts: x.playerOneDarts,
+                playerOneRegisteredDarts: x.playerOneRegisteredDarts,
+                PlayerOnePointsPerDart: x.PlayerOnePointsPerDart,
+                playerTwoScore: x.playerTwoScore,
+                playerTwoDarts: x.playerTwoDarts,
+                playerTwoRegisteredDarts: x.playerTwoRegisteredDarts,
+                PlayerTwoPointsPerDart: x.PlayerTwoPointsPerDart,
+                PlayerTurn: x.PlayerTurn,
+            })
+        })
+
+        // ref.on('value', snapshot => {
+        //     snapshot.forEach(function(data) {
+        //         let result = data.val();
+        //         result['key'] = data.key;
+        //         if(result.key == thisID){
+        //             thisGame.push(result);
+        //         }
+        //     })
+        // })
 
         BluetoothSerial.withDelimiter('\r').then(() => {
             Promise.all([
@@ -123,6 +165,7 @@ constructor(props){
                 </View>
                 <View style={{width: '20%', height: '10%', backgroundColor: 'skyblue'}}>
                 {/* <Text>{this.state.playerOneDarts[0]}</Text> */}
+                <Text>Dart Hit: {this.state.lastHit.Type} {this.state.lastHit.Number}</Text>
                 </View>
                 <View style={{width: '20%', height: '10%', backgroundColor: 'powderblue'}}>
                 {/* <Text>{this.state.playerOneDarts[1]}</Text> */}
@@ -131,15 +174,20 @@ constructor(props){
                 {/* <Text>{this.state.playerOneDarts[2]}</Text> */}
                 </View>
                 <View style={{width: '40%', height: '10%', backgroundColor: 'skyblue'}}>
-                {/* <Text>{this.state.PlayerOnePointsPerDart}</Text> */}
+                <Text>{this.state.PlayerOnePointsPerDart}</Text>
                 </View>
                 <View style={{width: '100%', height: '25%', backgroundColor: 'powderblue', justifyContent: 'center'}}>
-                <Text>Dart Hit: {this.state.lastHit.Type} {this.state.lastHit.Number}</Text>
+                {/* <Text>Dart Hit: {this.state.lastHit.Type} {this.state.lastHit.Number}</Text> */}
+                <Text>Score: {this.state.playerOneScore}</Text>
                 </View>
-                <View style={{width: '100%', height: '10%', backgroundColor: 'skyblue'}}/>
-                <View style={{width: '100%', height: '25%', backgroundColor: 'powderblue'}}/>
+                <View style={{width: '100%', height: '10%', backgroundColor: 'skyblue'}}>
+                <Text>{this.state.PlayerTurn}</Text>
+                </View>
+                <View style={{width: '100%', height: '25%', backgroundColor: 'powderblue'}}>
+                <Text>{this.state.playerTwoScore}</Text>
+                </View>
                 <View style={{width: '40%', height: '10%', backgroundColor: 'skyblue'}}>
-                {/* <Text>{this.state.PlayerTwoPointsPerDart}</Text> */}
+                <Text>{this.state.PlayerTwoPointsPerDart}</Text>
                 </View>
                 <View style={{width: '20%', height: '10%', backgroundColor: 'skyblue'}}>
                 {/* <Text>{this.state.playerTwoDarts[0]}</Text> */}
@@ -151,7 +199,7 @@ constructor(props){
                 {/* <Text>{this.state.playerTwoDarts[2]}</Text> */}
                 </View>
                 <View style={{width: '100%', height: '10%', backgroundColor: 'powderblue'}}>
-                {/* <Text>Player Two: {this.state.playerTwo}</Text> */}
+                <Text>Player Two: {this.state.playerTwo}</Text>
                 </View>
             </View>
         )

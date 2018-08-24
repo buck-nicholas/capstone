@@ -66,6 +66,9 @@ export function ScoreUpdate(gameDart,gameKey){
                 playerOneRegisteredDarts: newRegisteredDarts,
                 PlayerOnePointsPerDart: newPPD,
             })
+            if(newScore == 0){
+                alert("Game Over Pre Process")
+                ProcessGameEnd(gameKey);}
         }
         else{
             if( myGame.playerTwoScore - dartValue == 1){
@@ -100,11 +103,11 @@ export function ScoreUpdate(gameDart,gameKey){
                 playerTwoRegisteredDarts: newRegisteredDarts,
                 playerTwoPointsPerDart: newPPD,
             })
-        // if(snapshot.playerOneScore == '0' || snapshot.playerTwoScore == '0'){
-        //     ProcessGameEnd(gameKey);
-        // }
-    }
-})
+            if(newScore == 0){
+                alert("Game Over Pre Process")
+                ProcessGameEnd(gameKey);}
+        }
+    })
 }
 
 function DartCalculator(dartObj){
@@ -134,20 +137,73 @@ function DartCalculator(dartObj){
     return dartValue;
 }
 
-// function ProcessGameEnd(currentGame){
-//     database = firebase2.database();
-//     var ref = database.ref('games/' + currentGame);
-//     ref.once('value', snapshot => {
-//         winner = (snapshot.playerOneScore == 0) ? snapshot.playerOne : snapshot.playerTwo;
-//         firebase2.database().ref('games/' + currentGame).update({ // Update and Set Winner
-//             gameState: 'Completed',
-//             gameWinner: winner,
-//         })
-//         firebase2.database().ref('stats/' + 'ppdRank').set({
-//             // create stats arr.
-//         })
-//     })
-// }
+function ProcessGameEnd(currentGame){
+    database = firebase2.database();
+    var ref = database.ref('games');
+    ref.once('value', snapshot => {
+        var games = []
+        snapshot.forEach(function(data) {
+            let result = data.val();
+            result['key'] = data.key;
+            if(result.key == currentGame){
+                games.push(result);
+            }
+        })
+        myGame = games[0];
+        winner = (myGame.playerOneScore == 0) ? myGame.playerOne : myGame.playerTwo;
+        firebase2.database().ref('games/' + currentGame).update({ // Update and Set Winner
+            gameState: 'Completed',
+            gameWinner: winner,
+        })
+        UpdatePPDTable(myGame)
+    })
+    alert("Game Over")
+}
+
+function UpdatePPDTable(myGame){
+    pOneId = myGame.playerOne;
+    pTwoId = myGame.playerTwo;
+    database = firebase2.database();
+    var ref = database.ref('stats/ppdRank');
+    ref.once('value', snapshot => {
+        var players = []
+        snapshot.forEach(function(data) {
+            let result = data.val();
+            result['key'] = data.key;
+            players.push(result);
+        })
+        if(players.includes(pOneId)){
+            newAvg = (players[players.indexOf(pOneId)].ppdAvg + myGame.PlayerOnePointsPerDart) / 2;
+            firebase2.database().red('stats/ppdRank' + pOneId).update({
+                ppdAvg: newAvg,
+            })
+        }
+        else{
+            firebase2.database().red('stats/ppdRank' + pOneId).set({
+                ppdAvg: myGame.PlayerOnePointsPerDart,
+            })
+        }
+    })
+    ref.once('value', snapshot => {
+        var players = []
+        snapshot.forEach(function(data) {
+            let result = data.val();
+            result['key'] = data.key;
+            players.push(result);
+        })
+        if(players.includes(pTwoId)){
+            newAvg = (players[players.indexOf(pTwoId)].ppdAvg + myGame.PlayerTwoPointsPerDart) / 2;
+            firebase2.database().red('stats/ppdRank' + pTwoId).update({
+                ppdAvg: newAvg,
+            })
+        }
+        else{
+            firebase2.database().red('stats/ppdRank' + pTwoId).set({
+                ppdAvg: myGame.PlayerTwoPointsPerDart,
+            })
+        }
+    })
+}
 
 function PointsPerDartCalculator(currentScore, dartsRegistered){
     pointsEarned = 501 - currentScore;
